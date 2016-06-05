@@ -4,7 +4,8 @@ var {
   Text,
   View,
   AppRegistry,
-  StyleSheet
+  StyleSheet,
+  TabBarIOS
 } = ReactNative;
 
 var Navigation = React.createClass({
