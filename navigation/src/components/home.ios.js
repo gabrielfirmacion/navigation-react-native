@@ -5,7 +5,8 @@ var {
   Text,
   View,
   StyleSheet,
-  TouchableHighlight
+  TouchableHighlight,
+  TextInput
 } = ReactNative;
 
 var Home = React.createClass({
@@ -14,7 +15,8 @@ var Home = React.createClass({
       name: "Gabriel",
       age: "22",
       height: "5'4",
-      weight: "155"
+      weight: "155",
+      edit: false
     }
   },
   render: function() {
@@ -24,10 +26,7 @@ var Home = React.createClass({
 
         <View style={styles.profile}>
           <Text style={[styles.text,{textDecorationLine: 'underline'}]}>Profile</Text>
-          <Text style={styles.text}>Name: {this.state.name}</Text>
-          <Text style={styles.text}>Age: {this.state.age}</Text>
-          <Text style={styles.text}>Height: {this.state.height}</Text>
-          <Text style={styles.text}>Weight: {this.state.weight}</Text>
+          {this.profileInformation()}
           {this.editButton()}
         </View>
 
@@ -40,11 +39,44 @@ var Home = React.createClass({
   },
   editButton: function() {
     return <TouchableHighlight
-      onPress={() => null}
+      onPress={() => this.setState({ edit: !this.state.edit })}
       underlayColor="black"
       style={styles.editButton}>
-      <Text>Edit</Text>
+      <Text>{this.state.edit? "Save" : "Edit"}</Text>
     </TouchableHighlight>
+  },
+  profileInformation: function() {
+    if (this.state.edit) {
+      return <View>
+        <Text style={styles.text}>Name: </Text>
+        <TextInput
+          style={styles.input}
+          value={this.state.name}
+          onChangeText={(text) => this.setState({name: text})}/>
+        <Text style={styles.text}>Age: </Text>
+        <TextInput
+          style={styles.input}
+          value={this.state.age}
+          onChangeText={(text) => this.setState({age: text})}/>
+        <Text style={styles.text}>Height: </Text>
+        <TextInput
+          style={styles.input}
+          value={this.state.height}
+          onChangeText={(text) => this.setState({height: text})}/>
+        <Text style={styles.text}>Weight: </Text>
+        <TextInput
+          style={styles.input}
+          value={this.state.weight}
+          onChangeText={(text) => this.setState({weight: text})}/>
+      </View>
+    } else {
+      return <View>
+        <Text style={styles.text}>Name: {this.state.name}</Text>
+        <Text style={styles.text}>Age: {this.state.age}</Text>
+        <Text style={styles.text}>Height: {this.state.height}</Text>
+        <Text style={styles.text}>Weight: {this.state.weight}</Text>
+      </View>
+    }
   }
 });
 
@@ -79,7 +111,16 @@ var styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center'
-  }
+  },
+  input: {
+    padding: 4,
+    height: 40,
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 5,
+    width: 200,
+    alignSelf: 'center'
+  },
 });
 
 module.exports = Home;
