@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactNative = require('react-native');
-var Logo = require('./logo.ios')
+var Logo = require('./common/logo.ios')
 var {
   Text,
   View,

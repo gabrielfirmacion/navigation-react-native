@@ -23,7 +23,7 @@ var Navigation = React.createClass({
           <TabBarIOS.Item
             selected={this.state.selectedTab === 'home'}
             title="Home"
-            icon={require('./src/icons/home.png')}
+            // icon={require('./src/icons/home.png')}
             onPress={() => {
               this.setState({
                 selectedTab: 'home',

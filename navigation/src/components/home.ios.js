@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactNative = require('react-native');
-var Logo = require('./logo.ios')
+var Logo = require('./common/logo.ios')
 var {
   Text,
   View,
@@ -12,7 +12,7 @@ var Home = React.createClass({
     return <View style={styles.container}>
       <Logo />
       <View style={styles.body}>
-        <Text style={styles.text}>This is Home!</Text>
+        <Text style={styles.text}>This is Home!!</Text>
       </View>
     </View>
   }

@@ -8,20 +8,23 @@ var {
 
 var Logo = React.createClass({
   render: function() {
-    return <View style={styles.logo}>
-      <Text>GAINS</Text>
+    return <View style={styles.container}>
+      <Text style={styles.text}>Gains</Text>
     </View>
   }
 });
 
 var styles = StyleSheet.create({
-  logo: {
+  container: {
     flex: 1,
-    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'black',
     justifyContent: 'center',
-    borderColor: '#000033',
-    borderWidth: 1
+    alignItems: 'center',
   },
-})
+  text: {
+    fontSize: 30
+  }
+});
 
 module.exports = Logo;
