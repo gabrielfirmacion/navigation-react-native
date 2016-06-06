@@ -111,13 +111,15 @@ var styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    alignSelf: 'stretch'
   },
   currentWorkout: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderTopWidth: 5,
+    alignSelf: 'stretch',
     borderColor: 'black',
   },
   text: {
