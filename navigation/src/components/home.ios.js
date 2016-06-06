@@ -31,7 +31,12 @@ var Home = React.createClass({
         </View>
 
         <View style={styles.currentWorkout}>
-          <Text style={styles.text}>This is the current workout!</Text>
+          <View style={styles.image}><Text>Image</Text></View>
+          <View style={styles.workoutDescription}>
+            <Text>Workout Name: Cardio</Text>
+            <Text>Week: 5</Text>
+            <Text>Day: 3</Text>
+          </View>
         </View>
 
       </View>
@@ -53,17 +58,20 @@ var Home = React.createClass({
           style={styles.input}
           value={this.state.name}
           onChangeText={(text) => this.setState({name: text})}/>
+
         <Text style={styles.text}>Age: </Text>
         <TextInput
           style={styles.input}
           value={this.state.age}
           onChangeText={(text) => this.setState({age: text})}/>
+
         <Text style={styles.text}>Height: </Text>
         <TextInput
           style={styles.input}
           value={this.state.height}
           onChangeText={(text) => this.setState({height: text})}/>
-        <Text style={styles.text}>Weight: </Text>
+
+        <Text style={styles.text}>Weight:  </Text>
         <TextInput
           style={styles.input}
           value={this.state.weight}
@@ -71,10 +79,17 @@ var Home = React.createClass({
       </View>
     } else {
       return <View>
-        <Text style={styles.text}>Name: {this.state.name}</Text>
-        <Text style={styles.text}>Age: {this.state.age}</Text>
-        <Text style={styles.text}>Height: {this.state.height}</Text>
-        <Text style={styles.text}>Weight: {this.state.weight}</Text>
+        <Text style={styles.text}>Name:</Text>
+        <Text style={styles.text}>{this.state.name}</Text>
+
+        <Text style={styles.text}>Age:</Text>
+        <Text style={styles.text}>{this.state.age}</Text>
+
+        <Text style={styles.text}>Height:</Text>
+        <Text style={styles.text}>{this.state.height}</Text>
+
+        <Text style={styles.text}>Weight:</Text>
+        <Text style={styles.text}>{this.state.weight}</Text>
       </View>
     }
   }
@@ -83,6 +98,8 @@ var Home = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
+    borderWidth: 2,
+    borderColor: 'yellow',
   },
   body: {
     flex: 7,
@@ -98,11 +115,14 @@ var styles = StyleSheet.create({
   },
   currentWorkout: {
     flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
     borderWidth: 1,
     borderColor: 'black',
   },
   text: {
-    fontSize: 25
+    fontSize: 25,
+    width: 200,
   },
   editButton: {
     borderWidth: 2,
@@ -121,6 +141,15 @@ var styles = StyleSheet.create({
     width: 200,
     alignSelf: 'center'
   },
+  image: {
+    marginTop: 50,
+    marginLeft: 20,
+  },
+  workoutDescription: {
+    marginTop: 50,
+    marginLeft: 20,
+    marginRight: 20
+  }
 });
 
 module.exports = Home;

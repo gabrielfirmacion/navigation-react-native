@@ -19,7 +19,11 @@ var Navigation = React.createClass({
   },
   render: function() {
     return (
-        <TabBarIOS style={styles.container} selectedTab={this.state.selectedTab}>
+        <TabBarIOS
+          style={styles.container}
+          tintColor="white"
+          barTintColor="#000080"
+          selectedTab={this.state.selectedTab}>
           <TabBarIOS.Item
             selected={this.state.selectedTab === 'home'}
             title="Home"
@@ -61,8 +65,7 @@ var Navigation = React.createClass({
 
 var styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'gray'
+    flex: 1
   }
 });
 
