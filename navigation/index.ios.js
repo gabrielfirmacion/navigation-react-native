@@ -27,7 +27,7 @@ var Navigation = React.createClass({
           <TabBarIOS.Item
             selected={this.state.selectedTab === 'home'}
             title="Home"
-            // icon={require('./src/icons/home.png')}
+            icon={require('./src/icons/home.png')}
             onPress={() => {
               this.setState({
                 selectedTab: 'home',
@@ -39,6 +39,7 @@ var Navigation = React.createClass({
           <TabBarIOS.Item
             selected={this.state.selectedTab === 'workouts'}
             title="Workouts"
+            icon={require('./src/icons/workouts.png')}
             onPress={() => {
               this.setState({
                 selectedTab: 'workouts',
@@ -50,6 +51,7 @@ var Navigation = React.createClass({
           <TabBarIOS.Item
             selected={this.state.selectedTab === 'logs'}
             title="Logs"
+            icon={require('./src/icons/logs.png')}
             onPress={() => {
               this.setState({
                 selectedTab: 'logs',
