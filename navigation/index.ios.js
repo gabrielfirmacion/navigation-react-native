@@ -19,43 +19,42 @@ var Navigation = React.createClass({
   },
   render: function() {
     return (
-      <TabBarIOS selectedTab={this.state.selectedTab}>
+        <TabBarIOS style={styles.container} selectedTab={this.state.selectedTab}>
+          <TabBarIOS.Item
+            selected={this.state.selectedTab === 'home'}
+            title="Home"
+            icon={require('./src/icons/home.png')}
+            onPress={() => {
+              this.setState({
+                selectedTab: 'home',
+              });
+            }}>
+            <Home />
+          </TabBarIOS.Item>
 
-        <TabBarIOS.Item
-          selected={this.state.selectedTab === 'home'}
-          title="Home"
-          icon={require('./src/icons/home.png')}
-          onPress={() => {
-            this.setState({
-              selectedTab: 'home',
-            });
-          }}>
-          <Home />
-        </TabBarIOS.Item>
+          <TabBarIOS.Item
+            selected={this.state.selectedTab === 'workouts'}
+            title="Workouts"
+            onPress={() => {
+              this.setState({
+                selectedTab: 'workouts',
+              });
+            }}>
+            <Workouts />
+          </TabBarIOS.Item>
 
-        <TabBarIOS.Item
-          selected={this.state.selectedTab === 'workouts'}
-          title="Workouts"
-          onPress={() => {
-            this.setState({
-              selectedTab: 'workouts',
-            });
-          }}>
-          <Workouts />
-        </TabBarIOS.Item>
+          <TabBarIOS.Item
+            selected={this.state.selectedTab === 'logs'}
+            title="Logs"
+            onPress={() => {
+              this.setState({
+                selectedTab: 'logs',
+              });
+            }}>
+            <Log />
+          </TabBarIOS.Item>
+        </TabBarIOS>
 
-        <TabBarIOS.Item
-          selected={this.state.selectedTab === 'logs'}
-          title="Logs"
-          onPress={() => {
-            this.setState({
-              selectedTab: 'logs',
-            });
-          }}>
-          <Log />
-        </TabBarIOS.Item>
-
-      </TabBarIOS>
     );
   }
 });
@@ -63,11 +62,7 @@ var Navigation = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  text: {
-    fontSize: 30
+    backgroundColor: 'gray'
   }
 });
 

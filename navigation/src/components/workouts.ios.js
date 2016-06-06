@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactNative = require('react-native');
+var Logo = require('./logo.ios')
 var {
   Text,
   View,
@@ -9,7 +10,10 @@ var {
 var Workouts = React.createClass({
   render: function() {
     return <View style={styles.container}>
-      <Text style={styles.text}>This is Workouts</Text>
+      <Logo />
+      <View style={styles.body}>
+        <Text style={styles.text}>This is Workouts!</Text>
+      </View>
     </View>
   }
 });
@@ -17,11 +21,11 @@ var Workouts = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  body: {
+    flex: 7,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  text: {
-    fontSize: 30
   }
 });
 
