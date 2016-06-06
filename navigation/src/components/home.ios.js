@@ -12,10 +12,10 @@ var {
 var Home = React.createClass({
   getInitialState: function() {
     return {
-      name: "Gabriel",
+      name: "John Doe",
       age: "22",
-      height: "5'4",
-      weight: "155",
+      height: "5'6",
+      weight: "150",
       edit: false
     }
   },
@@ -52,7 +52,7 @@ var Home = React.createClass({
   },
   profileInformation: function() {
     if (this.state.edit) {
-      return <View>
+      return <View style={{flex: 1}}>
         <Text style={styles.text}>Name: </Text>
         <TextInput
           style={styles.input}
@@ -78,7 +78,7 @@ var Home = React.createClass({
           onChangeText={(text) => this.setState({weight: text})}/>
       </View>
     } else {
-      return <View>
+      return <View style={{flex: 1}}>
         <Text style={styles.text}>Name:</Text>
         <Text style={styles.text}>{this.state.name}</Text>
 
